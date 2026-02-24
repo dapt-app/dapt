@@ -1,65 +1,61 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            DAPT LIVE ✅
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col gap-8">
+      <section className="space-y-4">
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-emerald-400">
+          DAPT — Data Analytic Prediction Terminal
+        </p>
+        <h1 className="text-balance text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl">
+          Read the game like a{" "}
+          <span className="text-emerald-400">terminal</span>.
+        </h1>
+        <p className="max-w-xl text-sm text-zinc-400 sm:text-base">
+          DAPT is a focused shell for football prediction work. Inspect
+          fixtures, probabilities, and model confidence in a fast, minimal,
+          terminal-inspired interface.
+        </p>
+      </section>
+
+      <div className="flex flex-wrap items-center gap-4">
+        <Link
+          href="/matches"
+          className="inline-flex items-center gap-2 rounded border border-emerald-400 bg-emerald-500/10 px-4 py-2 text-sm font-mono uppercase tracking-wide text-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.25)] transition hover:bg-emerald-500/20 hover:text-emerald-200"
+        >
+          ▸ Open Matches
+        </Link>
+        <span className="text-xs text-zinc-500">
+          Hint: pin this tab as your match-day terminal.
+        </span>
+      </div>
+
+      <section className="mt-8 grid gap-4 text-xs text-zinc-400 sm:grid-cols-3 sm:text-sm">
+        <div className="rounded border border-zinc-800 bg-zinc-950/40 p-3">
+          <div className="mb-1 font-mono text-[0.7rem] uppercase tracking-wide text-zinc-500">
+            Pipeline
+          </div>
+          <p className="text-zinc-400">
+            Plug in your own data sources and models behind this shell.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="rounded border border-zinc-800 bg-zinc-950/40 p-3">
+          <div className="mb-1 font-mono text-[0.7rem] uppercase tracking-wide text-zinc-500">
+            Snapshot reads
+          </div>
+          <p className="text-zinc-400">
+            Quickly scan upcoming fixtures and key prediction signals.
+          </p>
         </div>
-      </main>
+        <div className="rounded border border-zinc-800 bg-zinc-950/40 p-3">
+          <div className="mb-1 font-mono text-[0.7rem] uppercase tracking-wide text-zinc-500">
+            Admin surface
+          </div>
+          <p className="text-zinc-400">
+            Monitor model health and ingestion status from the Admin view.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
